@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { getLocale } from 'next-intl/server'
+import { NextIntlClientProvider } from 'next-intl'
 
 import { siteConfig } from '@/config/site'
 
@@ -79,10 +81,14 @@ const inter = Inter({
 
 type Props = Readonly<{ children: React.ReactNode }>
 
-export default function RootLayout({ children }: Props) {
+export default async function RootLayout({ children }: Props) {
+  const locale = await getLocale()
+
   return (
-    <html lang='en' className={inter.className}>
-      <body>{children}</body>
+    <html lang={locale} className={inter.className}>
+      <body>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      </body>
     </html>
   )
 }
