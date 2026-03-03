@@ -1,7 +1,7 @@
 {
   "home": {
     "header": {
-      "title": "Pinpoint",
+      "title": "IPLookup",
       "subtitle": "Easily identify the origin of an IP address and get more information about its location.",
       "theme": {
         "title": "Change the current page theme",
@@ -22,9 +22,10 @@
     "error": {
       "title": "Error",
       "text": "Unable to load the data at the moment. Please try refreshing the page.",
-      "btn": "Refresh the page"
+      "btn": "Refresh the page",
+      "closeBtnTitle": "Close"
     },
-    "dataDisplayList": {
+    "info": {
       "ipv4": "IPv4:",
       "city": "City:",
       "state": "State:",
@@ -40,16 +41,17 @@
       "asnDomain": "ASN Domain:",
       "tor": "Tor:",
       "proxy": "Proxy:",
-      "dataCenter": "Data Center:"
+      "dataCenter": "Data Center:",
+      "time": "Time:"
     },
     "input": {
-      "ipErrorText": "Please enter a valid IP address!",
+      "error": "Please enter a valid IP address!",
       "btnTitle": "Search",
       "placeholder": "Search by IP address, Ex: 203.0.113.1"
     },
     "map": {
       "marker": {
-        "default": "The IP address {{ip}} is registered in this area.",
+        "default": "The IP address {ip} is registered in this area.",
         "fallback": "It was not possible to obtain the approximate coordinates of this IP address, so let's take a trip around Point Nemo."
       }
     },
@@ -58,6 +60,8 @@
         "information": "Information",
         "map": "Map"
       }
-    }
+    },
+    "yes": "Yes",
+    "no": "No"
   }
 }

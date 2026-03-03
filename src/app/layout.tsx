@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { getLocale } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
+import { getLocale } from 'next-intl/server'
 
 import { siteConfig } from '@/config/site'
 
