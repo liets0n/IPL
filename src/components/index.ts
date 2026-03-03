@@ -1,5 +1,5 @@
 export { default as Header } from './header'
 export { default as InfoWindow } from './infoWindow'
 export { default as Input } from './input'
-export { default as MapWindow } from './mapWindow'
+export { default as MapWindow } from './mapWindow/dynamicMap'
 export { default as Window } from './window'
