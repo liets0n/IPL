@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { getLocale } from 'next-intl/server'
+import { Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
+import { getLocale } from 'next-intl/server'
 
 import { siteConfig } from '@/config/site'
 
@@ -73,10 +73,13 @@ export const metadata: Metadata = {
   }
 }
 
-const inter = Inter({
+export const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  style: 'normal',
-  display: 'swap'
+  variable: '--font-plus-jakarta'
+})
+
+export const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin']
 })
 
 type Props = Readonly<{ children: React.ReactNode }>
@@ -85,7 +88,7 @@ export default async function RootLayout({ children }: Props) {
   const locale = await getLocale()
 
   return (
-    <html lang={locale} className={inter.className}>
+    <html lang={locale} className={`${spaceGrotesk.className}`}>
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>

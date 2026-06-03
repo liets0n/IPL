@@ -1,7 +1,12 @@
+import { Playfair_Display } from 'next/font/google'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
 import LocaleSwitcher from '@/components/localeSwitcher'
+
+const playfair = Playfair_Display({
+  subsets: ['latin']
+})
 
 export default function Header() {
   const t = useTranslations('home')
@@ -13,7 +18,7 @@ export default function Header() {
           href='/'
           className='w-max text-5xl no-underline normal-case text-gray-900 max-[486px]:text-3xl'
         >
-          <h1 className='font-bold'>IP Lookup</h1>
+          <h1 className={`font-bold ${playfair.className}`}>IP Lookup</h1>
         </Link>
 
         <p className='w-98 text-gray-500 max-[486px]:w-68 max-[486px]:text-sm'>
