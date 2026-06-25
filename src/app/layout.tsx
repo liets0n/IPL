@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google'
-import { NextIntlClientProvider } from 'next-intl'
 import { getLocale } from 'next-intl/server'
 
 import { siteConfig } from '@/config/site'
@@ -89,9 +88,7 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={locale} className={`${spaceGrotesk.className}`}>
-      <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

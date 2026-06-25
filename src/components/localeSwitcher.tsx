@@ -1,10 +1,9 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import { useLocale } from 'next-intl'
 import { useTransition } from 'react'
-
-import { setLocaleCookie } from '@/actions/locale'
+import { usePathname, useRouter } from '@/i18n/navigation'
 
 const localeLabels: Record<string, string> = {
   pt: 'Português',
@@ -12,24 +11,29 @@ const localeLabels: Record<string, string> = {
 }
 
 export default function LocaleSwitcher() {
+  const locale = useLocale()
   const router = useRouter()
-  const currentLocale = useLocale()
-
+  const pathname = usePathname()
+  const params = useParams()
   const [isPending, startTransition] = useTransition()
 
   const switchLocale = (nextLocale: string) => {
-    startTransition(async () => {
-      await setLocaleCookie(nextLocale)
-      router.refresh()
+    if (nextLocale === locale) return
+
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error
+        { pathname, params },
+        { locale: nextLocale }
+      )
     })
   }
 
   return (
     <select
-      name='language'
+      value={locale}
       onChange={e => switchLocale(e.target.value)}
       disabled={isPending}
-      defaultValue={currentLocale}
       className='w-32 h-12 text-base p-2 border-2 border-gray-900 rounded-md shadow-[0.3rem_0.3rem_0_var(--gray-900)] text-gray-900 bg-gray-50 cursor-pointer max-[486px]:w-1/2 max-[486px]:text-sm max-[486px]:shadow-[0.2rem_0.2rem_0_var(--gray-900)]'
     >
       {Object.entries(localeLabels).map(([code, label]) => (
