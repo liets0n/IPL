@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 import { Window } from '@/components'
-import { useInfo } from '@/store'
+import { useInfo } from '@/stores'
 
 const ZOOM = 7.49
 const MIN_ZOOM = 1

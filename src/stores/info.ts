@@ -1,5 +1,3 @@
-/** biome-ignore-all lint/suspicious/noExplicitAny: <> */
-
 import { create } from 'zustand'
 
 import type { DataResponseType } from '@/@types/apiResponse'

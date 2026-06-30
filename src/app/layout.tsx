@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google'
 import { getLocale } from 'next-intl/server'
+import { ThemeProvider } from 'next-themes'
 
 import { siteConfig } from '@/config/site'
 
@@ -87,8 +88,16 @@ export default async function RootLayout({ children }: Props) {
   const locale = await getLocale()
 
   return (
-    <html lang={locale} className={`${spaceGrotesk.className}`}>
-      <body>{children}</body>
+    <html
+      lang={locale}
+      className={`${spaceGrotesk.className} ${plusJakarta.className}`}
+      suppressHydrationWarning
+    >
+      <body className='bg-zinc-50 dark:bg-zinc-950'>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

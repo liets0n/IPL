@@ -1,18 +1,17 @@
-/** biome-ignore-all lint/suspicious/noShadowRestrictedNames: s */
-
 'use client'
 
 import { useTranslations } from 'next-intl'
+
 import { Window } from '@/components'
-import { useInfo } from '@/store'
+import { useInfo } from '@/stores'
 import { textFormatter } from '@/utils'
 
 const Item = ({ title, content }: { title: string; content: string }) => {
   return (
     <li className='leading-[2.1rem] [&>span]:text-base'>
-      <span className='font-bold text-gray-800'>{title}</span>
+      <span className='font-bold text-zinc-950 dark:text-zinc-50'>{title}</span>
       &nbsp;
-      <span>{content}</span>
+      <span className='text-zinc-500 dark:text-zinc-500'>{content}</span>
     </li>
   )
 }
