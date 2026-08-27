@@ -18,21 +18,12 @@ export const metadata: Metadata = {
   description:
     'IPLookup provides advanced IP address analysis with geographic, network, reputation, and provider data. Fast, accurate, and ideal for technical teams.',
   keywords: [
-    'IP lookup',
-    'IP address lookup',
-    'check IP address',
-    'what is my IP',
-    'IP geolocation',
-    'IP location finder',
-    'find IP location',
-    'IP address checker',
-    'trace IP address',
-    'IP tracker',
-    'free IP lookup',
-    'IP address locator',
-    'geolocation by IP',
-    'public IP lookup',
-    'ISP lookup'
+    'ip',
+    'ip lookup',
+    'ip address lookup',
+    'what is my ip',
+    'ip geolocation',
+    'find ip location'
   ],
 
   authors: [
